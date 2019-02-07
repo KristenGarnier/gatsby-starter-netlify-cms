@@ -18,6 +18,10 @@ export default class Index extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  handleAttachment = e => {
+    this.setState({ [e.target.name]: e.target.files[0] });
+  };
+
   handleSubmit = e => {
     e.preventDefault();
     const form = e.target;
@@ -39,7 +43,7 @@ export default class Index extends React.Component {
         <section className="section">
           <div className="container">
             <div className="content">
-        <h1>Contact</h1>
+        <h1>Proposer des talks / workshops </h1>
         <form
           name="contact"
           method="post"
@@ -69,9 +73,27 @@ export default class Index extends React.Component {
               </div>
           </div>
           <div className="field">
-            <label className="label" htmlFor={"message"}>Message</label>
+            <label className="label" htmlFor={"message"}>Parlez </label>
             <div className="control">
               <textarea className="textarea" name={"message"} onChange={this.handleChange} id={"message"} required={true} />
+            </div>
+          </div>
+          <div className="field">
+            <div className="file">
+              <label className="file-label">
+                <input
+                  className="file-input"
+                  type="file"
+                  name="attachment"
+                  onChange={this.handleAttachment}
+                />
+                <span className="file-cta">
+                  <span className="file-label">
+                    Choose a file… 
+                  </span>
+                </span>
+                {this.state.attachment ? this.state.attachment.name : "" }
+              </label>
             </div>
           </div>
           <div className="field">

@@ -3,9 +3,13 @@ import { navigate } from "gatsby-link";
 import Layout from '../../components/Layout'
 
 function encode(data) {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
+  const formData = new FormData();
+
+  for (const key of Object.keys(data)) {
+    formData.append(key, data[key]);
+  }
+
+  return formData;
 }
 
 export default class Index extends React.Component {
@@ -44,7 +48,7 @@ export default class Index extends React.Component {
             <div className="content">
         <h1>Proposer des talks / workshops </h1>
         <form
-          name="contact"
+          name="file-upload"
           method="post"
           action="/contact/thanks/"
           data-netlify="true"
@@ -52,7 +56,7 @@ export default class Index extends React.Component {
           onSubmit={this.handleSubmit}
         >
           {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="form-name" value="file-upload" />
           <div hidden>
             <label>
               Don’t fill this out:{" "}

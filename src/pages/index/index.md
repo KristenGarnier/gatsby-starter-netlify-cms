@@ -1,11 +1,11 @@
 ---
 title: Index
-heroBadgeIcon: /img/chemex.jpg
+heroBadgeIcon: /img/badge.svg
 heroBackgroundImage: /img/coffee-gear.png
-heroText: this is a test
-textCaptionHero: this is a test
-textNameHero: this is a test
-textRoleHero: this is a test
+heroText: Tu est dev back ou front ?
+textCaptionHero: 'Développeurs, je vous ai compris !'
+textNameHero: Marc Zukerberg
+textRoleHero: Développeur back end
 templateKey: index-page
 doingInEvent:
   - description: this is a test

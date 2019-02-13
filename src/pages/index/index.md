@@ -1,20 +1,20 @@
 ---
 title: Index
-hero-badge-icon: /img/chemex.jpg
-hero-background-image: /img/coffee-gear.png
-hero-text: Hello world
-text-caption-hero: Hello
-text-name-hero: Test
-text-role-hero: this is a test
+heroBadgeIcon: /img/chemex.jpg
+heroBackgroundImage: /img/coffee-gear.png
+heroText: this is a test
+textCaptionHero: this is a test
+textNameHero: this is a test
+textRoleHero: this is a test
 templateKey: index-page
-doing-in-event:
-  - description: is guess
-    icon: /img/apple-touch-icon.png
-    name: 'Coffe '
-event-description:
-  description: helo
-  icon: /img/coffee-gear.png
-  word: world
+doingInEvent:
+  - description: this is a test
+    icon: /img/chemex.jpg
+    name: this is a test
+eventDescription:
+  description: this is a test
+  icon: /img/coffee.png
+  word: this is a test
 partners:
   - link: 'http://coffee.fr'
     logo: /img/apple-touch-icon.png

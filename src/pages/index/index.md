@@ -1,7 +1,7 @@
 ---
 title: Index
-heroBadgeIcon: /img/badge.svg
-heroBackgroundImage: /img/coffee-gear.png
+heroBadgeIcon: /img/badge.fc990bb7.svg
+heroBackgroundImage: /img/default.e1607248.jpg
 heroText: Tu est dev back ou front ?
 textCaptionHero: 'Développeurs, je vous ai compris !'
 textNameHero: Marc Zukerberg

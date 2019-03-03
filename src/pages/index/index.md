@@ -8,9 +8,26 @@ textNameHero: Marc Zukerberg
 textRoleHero: Développeur back end
 templateKey: index-page
 doingInEvent:
-  - description: this is a test
-    icon: /img/chemex.jpg
-    name: this is a test
+  - description: >-
+      Leverage agile frameworks to provide a robust synopsis for high level
+      overviews.
+    icon: /img/confs.b8a2b27c.svg
+    name: La logique
+  - description: >-
+      Leverage agile frameworks to provide a robust synopsis for high level
+      overviews.
+    icon: /img/workshop.742e8be5.svg
+    name: La pratique
+  - description: >-
+      Leverage agile frameworks to provide a robust synopsis for high level
+      overviews.
+    icon: /img/microprez.c1fe496b.svg
+    name: Un peu plus loin
+  - description: >-
+      Leverage agile frameworks to provide a robust synopsis for high level
+      overviews.
+    icon: /img/conseils.65b3a552.svg
+    name: Roulez jeunesse
 eventDescription:
   description: this is a test
   icon: /img/coffee.png

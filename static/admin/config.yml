@@ -21,7 +21,7 @@ collections:
         required: true
         widget: "object"
         fields: 
-          - {label: "Name", name:"name", widget: "string"}
+          - {label: "Name", name: "name", widget: "string"}
           - {label: "Position", name: "position", widget: "string"}
           - {label: "Bio", name: "bio", widget: "string"}
           - {label: "Picture", name: "picture", widget: "image"}
@@ -29,7 +29,7 @@ collections:
         name: "alt-presenter"
         widget: "list"
         fields: 
-          - {label: "Name", name:"name", widget: "string"}
+          - {label: "Name", name: "name", widget: "string"}
           - {label: "Position", name: "position", widget: "string"}
           - {label: "Bio", name: "bio", widget: "string"}
           - {label: "Picture", name: "picture", widget: "image"}

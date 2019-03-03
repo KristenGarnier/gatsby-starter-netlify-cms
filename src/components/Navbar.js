@@ -1,7 +1,6 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
+import { StaticQuery, graphql, Link } from 'gatsby'
+import logo from '../img/logo-header.b9f0d7cf.svg'
 
 const Navbar = class extends React.Component {
 
@@ -30,50 +29,48 @@ const Navbar = class extends React.Component {
  
  render() {
    return (
+    <StaticQuery
+    query={graphql`
+      query MenuQuery {
+        allMarkdownRemark(filter: {frontmatter: {type:{eq: "top"} }}) {
+          edges {
+            node {
+              id,
+              frontmatter {
+                title,
+                description,
+                type,
+                link
+              }
+            }
+          }
+        }
+      }
+    `}
+    render = {data => {
+      return (
+        <header>
+          <div className="headerWrapper">
+            <p className="logo"><a href=""><img src={logo} alt="Lepuy.dev"/></a></p>
+            <nav className="nav">
+              <ul>
+                {
+                  data.allMarkdownRemark.edges.map((item, i) => {
+                    return <li key={i}>
+                      <Link to={item.node.frontmatter.link}>
+                        {item.node.frontmatter.title}
+                      </Link>
+                    </li>
+                  })
+                }
+              </ul>
+            </nav>
+          </div>
+        </header>
+      )
+    }}
+  />
   
-  <nav className="navbar is-transparent" role="navigation" aria-label="main-navigation">
-    <div className="container">
-      <div className="navbar-brand">
-        <Link to="/" className="navbar-item" title="Logo">
-          <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
-        </Link>
-        {/* Hamburger menu */}
-        <div className="navbar-burger burger" data-target="navMenu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-      <div id="navMenu" className="navbar-menu">
-      <div className="navbar-start has-text-centered">
-        <Link className="navbar-item" to="/about">
-          What is the matter 
-        </Link>
-        <Link className="navbar-item" to="/products">
-          Products
-        </Link>
-        <Link className="navbar-item" to="/contact">
-          Proposer des talks
-        </Link>
-        <Link className="navbar-item" to="/contact/examples">
-          Form Examples
-        </Link>
-      </div>
-      <div className="navbar-end has-text-centered">
-        <a
-          className="navbar-item"
-          href="https://github.com/AustinGreen/gatsby-netlify-cms-boilerplate"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className="icon">
-            <img src={github} alt="Github" />
-          </span>
-        </a>
-      </div>
-      </div>
-    </div>
-  </nav>
   )}
 }
 

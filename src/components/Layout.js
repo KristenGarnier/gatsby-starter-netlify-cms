@@ -3,7 +3,8 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from "gatsby"
 
 import Navbar from '../components/Navbar'
-import './all.sass'
+import Footer from '../components/Footer'
+import './css/all.css'
 
 const TemplateWrapper = ({ children }) => (
   <StaticQuery
@@ -38,6 +39,7 @@ const TemplateWrapper = ({ children }) => (
         </Helmet>
         <Navbar />
         <div>{children}</div>
+        <Footer />
       </div>
     )}
   />

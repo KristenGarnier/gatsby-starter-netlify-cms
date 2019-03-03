@@ -27,16 +27,16 @@ description: >-
   tortor. Donec nisl nunc, finibus ut commodo ac, placerat eget nisi.
 presenter:
   bio: Test
+  name: Kristen Garnier
   picture: /img/dev-boy.3021c2a6.svg
   position: Lead developper
-  undefined: Kristen Garnier
 alt-presenter:
   - bio: test
     content: Hello world
+    name: Kristen Garnier
     picture: /img/dev-boy.3021c2a6.svg
     position: Lead developper
     subject: This is the presentation
-    undefined: Kristen Garnier
 tags:
   - test
 ---

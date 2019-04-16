@@ -29,9 +29,11 @@ doingInEvent:
     icon: /img/conseils.65b3a552.svg
     name: Roulez jeunesse
 eventDescription:
-  description: this is a test
-  icon: /img/coffee.png
-  word: this is a test
+  description: >-
+    We are going to do things about things we said ! and this time we are going
+    to keep the word +
+  icon: /img/kristen.d46f4627.png
+  word: 'I am kristen, you shall not name me but here i am'
 partners:
   - link: 'http://coffee.fr'
     logo: /img/apple-touch-icon.png

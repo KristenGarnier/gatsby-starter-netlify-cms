@@ -43,7 +43,7 @@ export default class IndexPage extends React.Component {
     fetch("https://api.sendgrid.com/v3/contactdb/recipients", {
       method: "POST",
       headers: {
-        'Authorization': `Bearer process.env.SENDGRID_API_KEY`,
+        'Authorization': `Bearer ${process.env.SENDGRID_API_KEY}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify([

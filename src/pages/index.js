@@ -38,6 +38,25 @@ export default class IndexPage extends React.Component {
       .catch(error => alert(error));
   };
 
+  handleSubmitNewsletter = e => {
+    e.preventDefault();
+    fetch("https://api.sendgrid.com/v3/contactdb/recipients", {
+      method: "POST",
+      headers: {
+        'Authorization': `Bearer process.env.SENDGRID_API_KEY`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify([
+        {
+          "email": this.state.markettingEmail,
+        }
+      ])
+    })
+      .then((res) => res.json())
+      .then((res) => console.log('IT WORKS', res))
+      .catch(error => alert(error));
+  };
+
   renderImageIfExists = (Thumbnail) => {
     return Thumbnail 
       ? <img src={Thumbnail.publicURL} alt="hello"/> 
@@ -158,8 +177,8 @@ export default class IndexPage extends React.Component {
                 <h3>Plus ? Vous en voulez plus ? Inscrivez-vous à la newsletter !</h3>
                 <p>En renseignant votre adresse email, vous acceptez de recevoir les derniers évènements publiés et vous prenez connaissance de notre <a href="<!-- LINK -->" target="_blank">Politique de Confidientialité</a>.</p>
                 <p>Vous pouvez vous désinscrire à tout moment à l'aide des <a href="<!-- LINK -->" target="_blank">liens de désinscriptions.</a></p>
-                <form>
-                  <input type="email" name="email" placeholder="Entrez votre adresse mail"/>
+                <form onSubmit={this.handleSubmitNewsletter}>
+                  <input type="email" name="markettingEmail" placeholder="Entrez votre adresse mail"  onChange={this.handleChange} required={true}/>
                   <button type="submit" className="homeStrateLink homeStrateLink--left">Allez Go !</button>
                 </form>
               </div>

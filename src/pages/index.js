@@ -1,9 +1,42 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {graphql } from 'gatsby'
+import {graphql, navigate} from 'gatsby'
 import Layout from '../components/Layout'
 
+function encode(data) {
+  const formData = new FormData();
+
+  for (const key of Object.keys(data)) {
+    formData.append(key, data[key]);
+  }
+
+  return formData;
+}
+
 export default class IndexPage extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    const form = e.target;
+    fetch("/", {
+      method: "POST",
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        ...this.state
+      })
+    })
+      .then(() => navigate(form.getAttribute("action")))
+      .catch(error => alert(error));
+  };
 
   renderImageIfExists = (Thumbnail) => {
     return Thumbnail 
@@ -96,12 +129,25 @@ export default class IndexPage extends React.Component {
                 </div>
                 <div className="gridItem gridItem--50">
                   <div className="formWrapper">
-                    <form>
-                      <input type="text" name="lastname" placeholder="Nom" className="input--half" />
-                      <input type="text" name="firstname" placeholder="Prénom" className="input--half"/>
-                      <input type="email" name="email" placeholder="Adresse mail"/>
-                      <textarea name="message" placeholder="Sujet, thématique, de quoi allez vous parler ?"></textarea>
+                    <form
+                      name="file-upload"
+                      method="post"
+                      action="/contact/thanks/"
+                      data-netlify="true"
+                      data-netlify-honeypot="bot-field"
+                      onSubmit={this.handleSubmit}
+                    >
+                      <input type="text" name="lastname" placeholder="Nom" className="input--half" onChange={this.handleChange} required={true} />
+                      <input type="text" name="firstname" placeholder="Prénom" className="input--half" onChange={this.handleChange} required={true}/>
+                      <input type="email" name="email" placeholder="Adresse mail" onChange={this.handleChange} required={true}/>
+                      <textarea name="message" placeholder="Sujet, thématique, de quoi allez vous parler ?" onChange={this.handleChange} required={true}></textarea>
                       <button type="submit" className="homeStrateLink homeStrateLink--left">Je me présente</button>
+                      <div hidden>
+                        <label>
+                          Don’t fill this out:{" "}
+                          <input name="bot-field" onChange={this.handleChange} />
+                        </label>
+                      </div>
                     </form>
                   </div>
                 </div>

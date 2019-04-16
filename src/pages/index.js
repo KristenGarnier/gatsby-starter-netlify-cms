@@ -143,6 +143,7 @@ export default class IndexPage extends React.Component {
                       <textarea name="message" placeholder="Sujet, thématique, de quoi allez vous parler ?" onChange={this.handleChange} required={true}></textarea>
                       <button type="submit" className="homeStrateLink homeStrateLink--left">Je me présente</button>
                       <div hidden>
+                        <input type="hidden" name="form-name" value="file-upload"/>
                         <label>
                           Don’t fill this out:{" "}
                           <input name="bot-field" onChange={this.handleChange} />

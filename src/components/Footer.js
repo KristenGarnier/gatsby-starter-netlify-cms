@@ -12,6 +12,9 @@ const Footer = ({ children }) => (
               logo {
                 publicURL
               }
+            },
+            footerImage {
+              publicURL
             }
           }
         }
@@ -30,7 +33,7 @@ const Footer = ({ children }) => (
           <div className="container">
             <div className="footerPartners grid">
               <div className="gridItem gridItem--33">
-                <p className="footerLogo"><a href="<!-- LINK -->"><img src="/logo-white-footer.77e2e47c.svg" alt="<!-- ALT -->"/></a></p>
+                <p className="footerLogo"><a href="<!-- LINK -->"><img src={data.markdownRemark.frontmatter.footerImage.publicURL} alt="<!-- ALT -->"/></a></p>
               </div>
               <div className="gridItem gridItem--66">
                 <h2>En partenariat avec</h2>

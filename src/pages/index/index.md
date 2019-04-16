@@ -35,7 +35,7 @@ eventDescription:
   icon: /img/kristen.d46f4627.png
   word: 'I am kristen, you shall not name me but here i am'
 partners:
-  - link: 'http://coffee.fr'
+  - link: 'https://nerdy-bear.com'
     logo: /img/apple-touch-icon.png
 footerImage: /img/logo-white-footer.77e2e47c.svg
 ---

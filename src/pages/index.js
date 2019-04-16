@@ -74,6 +74,50 @@ export default class IndexPage extends React.Component {
               <a href="<!-- LINK -->" className="homeStrateLink homeStrateLink--vertical">Et plus précisment ?</a>
             </div>
           </div>
+          <div className="homeStrate strateHote" id="hote">
+            <div className="container">
+              <div className="grid">
+                <div className="gridItem gridItem--50">
+                  <p className="strateHoteTitle">{infos.frontmatter.eventDescription.description}</p>
+                </div>
+                <div className="gridItem gridItem--50">
+                  <p>{infos.frontmatter.eventDescription.word}</p>
+                  <p>Kristen, votre hôte</p>
+                </div>
+              </div>
+            </div>
+            <p className="strateHoteThumbnail"><img src={infos.frontmatter.eventDescription.icon.publicURL} alt="<!-- ALT -->" title="<!-- TITLE -->"/></p>
+          </div>
+          <div className="homeStrate strateContact" id="contact">
+            <div className="container">
+              <div className="grid">
+                <div className="gridItem gridItem--50">
+                  <h2>Vous voulez prendre la parole ?</h2>
+                </div>
+                <div className="gridItem gridItem--50">
+                  <div className="formWrapper">
+                    <form>
+                      <input type="text" name="lastname" placeholder="Nom" className="input--half" />
+                      <input type="text" name="firstname" placeholder="Prénom" className="input--half"/>
+                      <input type="email" name="email" placeholder="Adresse mail"/>
+                      <textarea name="message" placeholder="Sujet, thématique, de quoi allez vous parler ?"></textarea>
+                      <button type="submit" className="homeStrateLink homeStrateLink--left">Je me présente</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+      
+              <div className="newsletter">
+                <h3>Plus ? Vous en voulez plus ? Inscrivez-vous à la newsletter !</h3>
+                <p>En renseignant votre adresse email, vous acceptez de recevoir les derniers évènements publiés et vous prenez connaissance de notre <a href="<!-- LINK -->" target="_blank">Politique de Confidientialité</a>.</p>
+                <p>Vous pouvez vous désinscrire à tout moment à l'aide des <a href="<!-- LINK -->" target="_blank">liens de désinscriptions.</a></p>
+                <form>
+                  <input type="email" name="email" placeholder="Entrez votre adresse mail"/>
+                  <button type="submit" className="homeStrateLink homeStrateLink--left">Allez Go !</button>
+                </form>
+              </div>
+            </div>
+          </div>
         </main>
       </Layout>
     )

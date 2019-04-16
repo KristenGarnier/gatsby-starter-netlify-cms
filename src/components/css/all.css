@@ -1,4 +1,3 @@
-
 /**********************************************************************
 	VARIABLES
 **********************************************************************/
@@ -23,7 +22,7 @@ body {
   padding: 0;
 }
 
-h1, h2, #conference .strateConferenceDetailsContentDate, h3, h4, h5 {
+h1, h2, #conference .strateConferenceDetailsContentDate, h3, .strateHoteTitle, h4, h5 {
   color: #04A175;
   line-height: 1.4;
   margin: 30px 0;
@@ -38,7 +37,7 @@ h2, #conference .strateConferenceDetailsContentDate {
   font-size: 60px;
 }
 
-h3 {
+h3, .strateHoteTitle {
   font-size: 30px;
 }
 
@@ -52,6 +51,7 @@ h5 {
 
 a {
   color: #E69B4D;
+  font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
@@ -100,6 +100,79 @@ a:hover {
 }
 .gridItem--100 {
   width: calc(100% - (2 * 15px));
+}
+
+input,
+button:not([type=submit]),
+select,
+textarea {
+  height: 40px;
+  width: 100%;
+  margin-bottom: 10px;
+  display: block;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-appearance: none;
+  text-align: left;
+  border: none;
+  background-color: transparent;
+  font-size: 18px;
+  color: #E69B4D;
+  text-decoration: none;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.7);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+}
+input:focus, input:active,
+button:not([type=submit]):focus,
+button:not([type=submit]):active,
+select:focus,
+select:active,
+textarea:focus,
+textarea:active {
+  outline: none !important;
+}
+
+textarea {
+  width: 100%;
+  height: 200px !important;
+  padding: 10px 0 !important;
+  height: auto;
+  font-family: "Heebo", Arial, sans-serif;
+  line-height: inherit !important;
+  resize: none;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+button[type=submit] {
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-appearance: none;
+  text-align: left;
+  border: none;
+  background-color: transparent;
+  font-size: 18px;
+  color: #E69B4D;
+  text-decoration: none;
+  padding: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+button[type=submit]:focus, button[type=submit]:active {
+  outline: none !important;
+}
+button[type=submit].homeStrateLink:before {
+  top: 50%;
+  left: -15px;
+  bottom: auto;
+  transform: translate(-100%, -50%);
+}
+button[type=submit]:hover {
+  color: #ffffff !important;
+  transition: all 0.3s ease-in-out;
 }
 
 header {
@@ -161,7 +234,7 @@ header {
   position: relative;
   font-weight: 16px;
   line-height: 2;
-  font-weight: 700;
+  z-index: 5;
 }
 .homeStrateLink:before {
   position: absolute;
@@ -226,8 +299,8 @@ header {
   overflow: hidden;
 }
 #profil .strateProfilBg img {
-  width: 100%;
   object-fit: cover;
+  width: 100%;
   filter: grayscale(100%);
 }
 #profil .strateProfilContent {
@@ -249,7 +322,7 @@ header {
   z-index: 5;
   color: #ffffff;
 }
-#profil .strateProfilDetails h3 {
+#profil .strateProfilDetails h3, #profil .strateProfilDetails .strateHoteTitle {
   color: #ffffff;
 }
 #profil .strateProfil .profil {
@@ -361,7 +434,7 @@ header {
 #conference .strateConferenceDetailsContentDate {
   font-weight: 800;
 }
-#conference .strateConferenceDetailsContent h3 {
+#conference .strateConferenceDetailsContent h3, #conference .strateConferenceDetailsContent .strateHoteTitle {
   color: #ffffff;
 }
 #conference .strateConferenceDetailsContent .homeStrateLink {
@@ -378,23 +451,215 @@ header {
 #presentation .container {
   position: relative;
 }
-#presentation h2, #presentation #conference .strateConferenceDetailsContentDate, #conference #presentation .strateConferenceDetailsContentDate, #presentation h3 {
+#presentation .container:after {
+  position: absolute;
+  display: block;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 25.5%;
+  background-image: url("big-logo-top.992dc98e.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: translateY(68%);
+  z-index: 1;
+}
+#presentation h2, #presentation #conference .strateConferenceDetailsContentDate, #conference #presentation .strateConferenceDetailsContentDate, #presentation h3, #presentation .strateHoteTitle {
   color: #ffffff;
 }
 #presentation p {
   margin: 0;
 }
-#presentation h3 {
+#presentation h3, #presentation .strateHoteTitle {
   margin: 20px 0 10px 0;
 }
 #presentation .grid {
   margin-bottom: 40px;
 }
 
+.strateHote {
+  position: relative;
+  padding-bottom: 220px;
+  background-color: #000000;
+}
+.strateHote * {
+  position: relative;
+  z-index: 5;
+  color: rgba(255, 255, 255, 0.7);
+}
+.strateHoteTitle {
+  color: #ffffff;
+  margin-top: 10px;
+}
+.strateHote .container {
+  position: relative;
+}
+.strateHote .container:before {
+  position: absolute;
+  display: block;
+  content: "";
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 81.5%;
+  background-image: url("logo-big.2a7248a5.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+  transform: translateY(-60px);
+  opacity: 0.4;
+}
+.strateHoteThumbnail {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 35%);
+}
+.strateHoteThumbnail img {
+  max-width: 300px;
+}
+
+#contact {
+  position: relative;
+  padding: 140px 0 0 0;
+  background: linear-gradient(to top, #04A175, #04A175 7%, #202020 7%, #202020 100%);
+}
+#contact:before {
+  position: absolute;
+  display: block;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  background-image: url(dot-bg.d7a5d7e7.svg);
+  background-repeat: repeat;
+  z-index: 1;
+}
+#contact:after {
+  position: absolute;
+  display: block;
+  content: "";
+  top: 40%;
+  left: 0;
+  width: 100%;
+  padding-bottom: 30%;
+  background-image: url("line-bg.9d1b4516.svg");
+  background-size: cover;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+#contact > * {
+  position: relative;
+  z-index: 5;
+}
+#contact .grid {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+#contact h2, #contact #conference .strateConferenceDetailsContentDate, #conference #contact .strateConferenceDetailsContentDate {
+  width: 80%;
+  margin-bottom: 60px;
+}
+#contact .formWrapper {
+  position: relative;
+  padding: 60px 80px 60px 0;
+}
+#contact .formWrapper:before {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 0;
+  right: 0;
+  width: calc(100% + 80px);
+  height: 100%;
+  background-color: rgba(38, 38, 38, 0.9);
+  z-index: 1;
+}
+#contact .formWrapper form {
+  position: relative;
+  z-index: 5;
+}
+#contact .formWrapper form .input--half {
+  display: inline-block;
+  width: calc(50% - 13px);
+}
+#contact .formWrapper form .input--half:nth-child(1) {
+  margin-right: 10px;
+}
+#contact .formWrapper form .input--half:nth-child(2) {
+  margin-left: 10px;
+}
+#contact .formWrapper form textarea {
+  margin-bottom: 40px;
+}
+#contact .newsletter {
+  position: relative;
+  z-index: 5;
+  margin-top: 80px;
+  background-color: #000000;
+  padding: 40px 60px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+#contact .newsletter h3, #contact .newsletter .strateHoteTitle {
+  color: #ffffff;
+}
+#contact .newsletter form {
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
+}
+#contact .newsletter form input[type=email] {
+  padding-right: 160px;
+}
+#contact .newsletter form button[type=submit] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 145px;
+}
+
 .footer {
+  position: relative;
   background-color: #04A175;
   font-size: 16px;
   padding: 30px 0;
+}
+.footer:before {
+  position: absolute;
+  display: block;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 455px;
+  height: 445px;
+  background-image: url(circle-bg.6c1000fd.svg);
+  background-size: cover;
+  overflow: hidden;
+  z-index: 1;
+  opacity: 0.4;
+  transform: rotate(90deg);
+}
+.footer:after {
+  position: absolute;
+  display: block;
+  content: "";
+  bottom: 0;
+  right: 0;
+  width: 455px;
+  height: 445px;
+  background-image: url(circle-bg.6c1000fd.svg);
+  background-size: cover;
+  overflow: hidden;
+  z-index: 1;
+  opacity: 0.4;
+}
+.footer .container {
+  position: relative;
+  z-index: 10;
 }
 .footer ul {
   padding: 0;
@@ -478,4 +743,14 @@ header {
 }
 .footerCopyright a {
   text-transform: none;
+}
+.footer i {
+  margin: 0 5px;
+  font-size: 16px;
+}
+.footer i.fa-heart {
+  color: #d90000;
+}
+.footer i.fa-mug-hot {
+  color: #723A2D;
 }

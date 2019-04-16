@@ -37,5 +37,6 @@ eventDescription:
 partners:
   - link: 'http://coffee.fr'
     logo: /img/apple-touch-icon.png
+footerImage: /img/logo-white-footer.77e2e47c.svg
 ---
 
